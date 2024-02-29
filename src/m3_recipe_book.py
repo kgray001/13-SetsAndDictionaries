@@ -31,10 +31,22 @@
 #       5. Repeat steps 2-4 until the user types "end" and then adds the
 #          dictionary to the list of recipes.
 #       6. Prints the list of recipes one recipe at a time (HINT: use a loop
-#          here)
+#          here) FOR LOOP 
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+print("Welcome to Recipe Book!")
+while True:
+    r1 = input("Please enter a recipe name: ")
+    recipe = {
+        "name": r1
+        "ingredient": ingredients
+    }
+    while True:
+        i1 = input("Please enter an ingredient: ")
+        ingredients = {i1}
+        if i1 == "end":
+            break
 
 ###############################################################################
 # TODO: 2. EXTRA CREDIT (2 pts)
