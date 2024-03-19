@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (6 pts)
+# DONE: 1. (6 pts)
 #
 #   For this _TODO_, we are going to bring together many of the concepts that
 #   we have learned.
@@ -31,25 +31,34 @@
 #       5. Repeat steps 2-4 until the user types "end" and then adds the
 #          dictionary to the list of recipes.
 #       6. Prints the list of recipes one recipe at a time (HINT: use a loop
-#          here) FOR LOOP 
-#
+#          here) 
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 print("Welcome to Recipe Book!")
+recipes: list[dict] = []
 while True:
     r1 = input("Please enter a recipe name: ")
+    if r1 == "end":
+        break
     recipe = {
-        "name": r1
-        "ingredient": ingredients
+        "name": r1,
+        "ingredients": set()
     }
+    recipes.append(recipe)
     while True:
-        i1 = input("Please enter an ingredient: ")
-        ingredients = {i1}
-        if i1 == "end":
+        ingredient = input("Please enter an ingredient: ")
+        if ingredient == "end":
             break
+        recipe["ingredients"].add(ingredient)
+
+for recipe in recipes:
+    print()
+    print(recipe["name"])
+    for ingredient in recipe["ingredients"]:
+        print(" ● " + ingredient)
 
 ###############################################################################
-# TODO: 2. EXTRA CREDIT (2 pts)
+# DONE: 2. EXTRA CREDIT (2 pts)
 #
 #   For this extra credit _TODO_, try to look into how you could print out the
 #   recipes in a better format that is a little easier to read. Your solution
